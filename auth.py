@@ -15,10 +15,17 @@ def authenticate(username, password, pwdb):
             print('Wrong password!')
     else:
         print('User not known!')
+        add_user(username, password, pwdb)
     return auth
 
 def add_user(username, password, pwdb):
-    pwdb[username] = password
+    response = input('Do you want to create a new user [y/n]?')
+    if response == 'y':
+        pwdb[username] = password
+        write_pwdb(pwdb)
+    else:
+        print('User not added')
+
 
 def write_pwdb(pwdb):
     #when with context is exited, the file is written and closed
