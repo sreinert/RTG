@@ -18,6 +18,7 @@ def authenticate(username, password, pwdb):
     return auth
 
 def add_user(username, password, pwdb):
+    """This is how you comment a function"""
     pwdb[username] = password
 
 def write_pwdb(pwdb):
